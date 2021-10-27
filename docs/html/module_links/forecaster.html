@@ -1,0 +1,713 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Core Module Documentation" href="hdays.html" /><link rel="prev" title="Core Module Documentation" href="df_utils.html" />
+
+    <link rel="shortcut icon" href="../_static/np_favicon.png"/><meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
+        <title>Core Module Documentation - NeuralProphet documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">NeuralProphet  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/np_logo.png" alt="Logo"/>
+  </div>
+  
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../model/README.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/model-overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/changes-from-prophet.html">Changes from prophet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/trend.html">Trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/seasonality.html">Seasonality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/auto-regression.html">Auto-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/lagged-regressors.html">Lagged-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/future-regressors.html">Future-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/hyperparameter-selection.html">Hyperparameter-selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/contribute.html">Contribution</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/autoregression_yosemite_temps.html">Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/benchmarking.html">Running benchmarking experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/collect_predictions.html">Prediction Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/crossvalidation.html">Test and CrossValidate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/sparse_autoregression_yosemite_temps.html">Sparse Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/trend_peyton_manning.html">Fitting a changing trend</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../example_links/energy_data_example.html">Example on PV forecasting dataset</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="__init__.html">__init__.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configure.html">configure.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="df_utils.html">df_utils.py</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">forecaster.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdays.html">hdays.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">metrics.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_forecast.html">plot_forecaster.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_model_parameters.html">plot_model_parameters.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_dataset.html">time_dataset.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_net.html">time_net.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils_torch.html">utils_torch.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils.py</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-neuralprophet.forecaster">
+<span id="core-module-documentation"></span><h1>Core Module Documentation<a class="headerlink" href="#module-neuralprophet.forecaster" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neuralprophet.forecaster.</span></span><span class="sig-name descname"><span class="pre">NeuralProphet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">growth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changepoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_changepoints</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">changepoints_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend_reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trend_reg_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yearly_seasonality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weekly_seasonality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daily_seasonality</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seasonality_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'additive'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seasonality_reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_forecasts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_lags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_hidden_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_hidden</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_sparsity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Huber'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AdamW'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_speed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impute_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet" title="Permalink to this definition">¶</a></dt>
+<dd><p>NeuralProphet forecaster.</p>
+<p>A simple yet powerful forecaster that models:
+Trend, seasonality, events, holidays, auto-regression, lagged covariates, and future-known regressors.
+Can be regualrized and configured to model nonlinear relationships.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.add_country_holidays">
+<span class="sig-name descname"><span class="pre">add_country_holidays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'additive'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.add_country_holidays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a country into the NeuralProphet object to include country specific holidays
+and create the corresponding configs such as lower, upper windows and the regularization
+parameters
+:param country_name: name of the country
+:type country_name: string
+:param lower_window: the lower window for all the country holidays
+:type lower_window: int
+:param upper_window: the upper window for all the country holidays
+:type upper_window: int
+:param regularization: optional  scale for regularization strength
+:type regularization: float
+:param mode: ‘additive’ (default) or ‘multiplicative’.
+:type mode: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>NeuralProphet object</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.add_events">
+<span class="sig-name descname"><span class="pre">add_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'additive'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.add_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add user specified events and their corresponding lower, upper windows and the
+regularization parameters into the NeuralProphet object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>events</strong> (<em>str</em><em>, </em><em>list</em>) – name or list of names of user specified events</p></li>
+<li><p><strong>lower_window</strong> (<em>int</em>) – the lower window for the events in the list of events</p></li>
+<li><p><strong>upper_window</strong> (<em>int</em>) – the upper window for the events in the list of events</p></li>
+<li><p><strong>regularization</strong> (<em>float</em>) – optional  scale for regularization strength</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – ‘additive’ (default) or ‘multiplicative’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>NeuralProphet object</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.add_future_regressor">
+<span class="sig-name descname"><span class="pre">add_future_regressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'additive'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.add_future_regressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a regressor as lagged covariate with order 1 (scalar) or as known in advance (also scalar).</p>
+<p>The dataframe passed to <cite>fit</cite> and <cite>predict</cite> will have a column with the specified name to be used as
+a regressor. When normalize=True, the regressor will be normalized unless it is binary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>string</em>) – name of the regressor.</p></li>
+<li><p><strong>regularization</strong> (<em>float</em>) – optional  scale for regularization strength</p></li>
+<li><p><strong>normalize</strong> (<em>bool</em>) – optional, specify whether this regressor will be
+normalized prior to fitting.
+if ‘auto’, binary regressors will not be normalized.</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – ‘additive’ (default) or ‘multiplicative’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>NeuralProphet object</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.add_lagged_regressor">
+<span class="sig-name descname"><span class="pre">add_lagged_regressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regularization</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_last_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.add_lagged_regressor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a covariate or list of covariate time series as additional lagged regressors to be used for fitting and predicting.
+The dataframe passed to <cite>fit</cite> and <cite>predict</cite> will have the column with the specified name to be used as
+lagged regressor. When normalize=True, the covariate will be normalized unless it is binary.
+:param names: name of the regressor/list of regressors.
+:type names: string or list
+:param regularization: optional  scale for regularization strength
+:type regularization: float
+:param normalize: optional, specify whether this regressor will be</p>
+<blockquote>
+<div><p>normalized prior to fitting.
+if ‘auto’, binary regressors will not be normalized.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>only_last_value</strong> (<em>bool</em>) – False (default) use same number of lags as auto-regression
+True: only use last known value as input</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>NeuralProphet object</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.add_seasonality">
+<span class="sig-name descname"><span class="pre">add_seasonality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_order</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.add_seasonality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a seasonal component with specified period, number of Fourier components, and regularization.</p>
+<p>Increasing the number of Fourier components allows the seasonality to change more quickly
+(at risk of overfitting).
+Note: regularization and mode (additive/multiplicative) are set in the main init.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – string name of the seasonality component.</p></li>
+<li><p><strong>period</strong> – float number of days in one period.</p></li>
+<li><p><strong>fourier_order</strong> – int number of Fourier components to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The NeuralProphet object.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.create_df_with_events">
+<span class="sig-name descname"><span class="pre">create_df_with_events</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.create_df_with_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a concatenated dataframe with the time series data along with the events data expanded.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’ and ‘y’</p></li>
+<li><p><strong>events_df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’ and ‘event’</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pd.DataFrame with columns ‘y’, ‘ds’ and other user specified events</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.crossvalidation_split_df">
+<span class="sig-name descname"><span class="pre">crossvalidation_split_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fold_overlap_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.crossvalidation_split_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits timeseries data in k folds for crossvalidation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – data</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – Data step sizes. Frequency of data recording,
+Any valid frequency for pd.date_range, such as ‘5min’, ‘D’ or ‘MS’</p></li>
+<li><p><strong>k</strong> – number of CV folds</p></li>
+<li><p><strong>fold_pct</strong> – percentage of overall samples to be in each fold</p></li>
+<li><p><strong>fold_overlap_pct</strong> – percentage of overlap between the validation folds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>df_train (pd.DataFrame):  training data
+df_val (pd.DataFrame): validation data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list of k tuples [(df_train, df_val), …] where</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.double_crossvalidation_split_df">
+<span class="sig-name descname"><span class="pre">double_crossvalidation_split_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_pct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.double_crossvalidation_split_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits timeseries data in two sets of k folds for crossvalidation on training and testing data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – data</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – Data step sizes. Frequency of data recording,
+Any valid frequency for pd.date_range, such as ‘5min’, ‘D’ or ‘MS’</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – number of CV folds</p></li>
+<li><p><strong>valid_pct</strong> (<em>float</em>) – percentage of overall samples to be in validation</p></li>
+<li><p><strong>test_pct</strong> (<em>float</em>) – percentage of overall samples to be in test</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of folds_val, folds_test, where each are same as crossvalidation_split_df returns</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_each_epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_modeling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_bar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_live_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Train, and potentially evaluate model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’, ‘y’ with all data</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – Data step sizes. Frequency of data recording,
+Any valid frequency for pd.date_range, such as ‘5min’, ‘D’ or ‘MS’</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train.
+default: if not specified, uses self.epochs</p></li>
+<li><p><strong>validate_each_epoch</strong> (<em>bool</em>) – whether to evaluate performance after each training epoch</p></li>
+<li><p><strong>valid_p</strong> (<em>float</em>) – fraction of data to hold out from training for model evaluation</p></li>
+<li><p><strong>Modeling</strong> (<em>## Global</em>) – </p></li>
+<li><p><strong>local_modeling</strong> (<em>bool</em>) – when set to true each episode from list of dataframes will be considered</p></li>
+<li><p><strong>locally</strong> (<em>i.e. seasonality</em><em>, </em><em>data_params</em><em>, </em><em>normalization</em>) – </p></li>
+<li><p><strong>progress_bar</strong> (<em>bool</em>) – display updating progress bar (tqdm)</p></li>
+<li><p><strong>plot_live_loss</strong> (<em>bool</em>) – plot live training loss,
+requires [live] install or livelossplot package installed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>metrics with training and potentially evaluation metrics</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.handle_missing_data">
+<span class="sig-name descname"><span class="pre">handle_missing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicting</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.handle_missing_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks, auto-imputes and normalizes new data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em><em> or </em><em>list of pd.Dataframes</em>) – raw data with columns ‘ds’ and ‘y’</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – data frequency</p></li>
+<li><p><strong>predicting</strong> (<em>bool</em>) – when no lags, allow NA values in ‘y’ of forecast series or ‘y’ to miss completely</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pre-processed df</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.highlight_nth_step_ahead_of_each_forecast">
+<span class="sig-name descname"><span class="pre">highlight_nth_step_ahead_of_each_forecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.highlight_nth_step_ahead_of_each_forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set which forecast step to focus on for metrics evaluation and plotting.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>step_number</strong> (<em>int</em>) – i-th step ahead forecast to use for statistics and plotting.
+default: None.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">6)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the NeuralProphet forecast, including history.
+:param fcst: output of self.predict.
+:type fcst: pd.DataFrame
+:param ax: Optional, matplotlib axes on which to plot.
+:type ax: matplotlib axes
+:param xlabel: label name on X-axis
+:type xlabel: string
+:param ylabel: label name on Y-axis
+:type ylabel: string
+:param figsize: width, height in inches. default: (10, 6)
+:type figsize: tuple</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A matplotlib figure.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.plot_components">
+<span class="sig-name descname"><span class="pre">plot_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.plot_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the NeuralProphet forecast components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fcst</strong> (<em>pd.DataFrame</em>) – output of self.predict</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em>) – width, height in inches.
+None (default):  automatic (10, 3 * npanel)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A matplotlib figure.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.plot_last_forecast">
+<span class="sig-name descname"><span class="pre">plot_last_forecast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fcst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ds'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'y'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(10,</span> <span class="pre">6)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_previous_forecasts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_history_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.plot_last_forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the NeuralProphet forecast, including history.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fcst</strong> (<em>pd.DataFrame</em>) – output of self.predict.</p></li>
+<li><p><strong>ax</strong> (<em>matplotlib axes</em>) – Optional, matplotlib axes on which to plot.</p></li>
+<li><p><strong>xlabel</strong> (<em>string</em>) – label name on X-axis</p></li>
+<li><p><strong>ylabel</strong> (<em>string</em>) – label name on Y-axis</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em>) – width, height in inches. default: (10, 6)</p></li>
+<li><p><strong>include_previous_forecasts</strong> (<em>int</em>) – number of previous forecasts to include in plot</p></li>
+<li><p><strong>plot_history_data</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A matplotlib figure.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.plot_parameters">
+<span class="sig-name descname"><span class="pre">plot_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weekly_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yearly_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.plot_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the NeuralProphet forecast components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>weekly_start</strong> (<em>int</em>) – specifying the start day of the weekly seasonality plot.
+0 (default) starts the week on Sunday. 1 shifts by 1 day to Monday, and so on.</p></li>
+<li><p><strong>yearly_start</strong> (<em>int</em>) – specifying the start day of the yearly seasonality plot.
+0 (default) starts the year on Jan 1. 1 shifts by 1 day to Jan 2, and so on.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em>) – width, height in inches.
+None (default):  automatic (10, 3 * npanel)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A matplotlib figure.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decompose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the model to make predictions.</p>
+<p>Expects all data needed to be present in dataframe.
+If you are predicting into the unknown future and need to add future regressors or events,
+please prepare data with make_future_dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pandas DataFrame</em><em> or </em><em>list of Dataframes</em>) – Dataframe with columns ‘ds’ datestamps, ‘y’ time series values and
+other external variables</p></li>
+<li><p><strong>decompose</strong> (<em>bool</em>) – Whether to add individual components of forecast to the dataframe</p></li>
+<li><p><strong>raw</strong> (<em>bool</em>) – Whether return the raw forecasts sorted by forecast start date
+False (default): returns forecasts sorted by target (highlighting forecast age)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><blockquote>
+<div><dl class="simple">
+<dt>df_raw (pandas DataFrame): columns ‘ds’, ‘y’, and [‘step&lt;i&gt;’]</dt><dd><p>where step&lt;i&gt; refers to the i-step-ahead prediction <em>made at</em> this row’s datetime.
+e.g. step3 is the prediction for 3 steps into the future,
+predicted using information up to (excluding) this datetime.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt>else:</dt><dd><dl class="simple">
+<dt>df_forecast (pandas DataFrame or list of Dataframes): columns ‘ds’, ‘y’, ‘trend’ and [‘yhat&lt;i&gt;’]</dt><dd><p>where yhat&lt;i&gt; refers to the i-step-ahead prediction for this row’s datetime.
+e.g. yhat3 is the prediction for this datetime, predicted 3 steps ago, “3 steps old”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>if raw</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.predict_seasonal_components">
+<span class="sig-name descname"><span class="pre">predict_seasonal_components</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.predict_seasonal_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict seasonality components</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’, prediction dates</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pd.Dataframe or list of pd.Dataframe with seasonal components. with columns of name &lt;seasonality component name&gt;</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.predict_trend">
+<span class="sig-name descname"><span class="pre">predict_trend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.predict_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict only trend component of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’, prediction dates</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>pd.Dataframe or list of pd.Dataframe with trend on prediction dates.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.set_true_ar_for_eval">
+<span class="sig-name descname"><span class="pre">set_true_ar_for_eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">true_ar_weights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.set_true_ar_for_eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>configures model to evaluate closeness of AR weights to true weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>true_ar_weights</strong> (<em>np.array</em>) – True AR-parameters, if known.</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.split_df">
+<span class="sig-name descname"><span class="pre">split_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_modeling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.split_df" title="Permalink to this definition">¶</a></dt>
+<dd><p>Splits timeseries df into train and validation sets.</p>
+<p>Prevents overbleed of targets. Overbleed of inputs can be configured.
+Also performs basic data checks and fills in missing data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – data</p></li>
+<li><p><strong>freq</strong> (<em>str</em>) – Data step sizes. Frequency of data recording,
+Any valid frequency for pd.date_range, such as ‘5min’, ‘D’ or ‘MS’</p></li>
+<li><p><strong>valid_p</strong> (<em>float</em>) – fraction of data to use for holdout validation set
+Targets will still never be shared.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>training data
+df_val (pd.DataFrame): validation data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>df_train (pd.DataFrame)</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.forecaster.NeuralProphet.test">
+<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.forecaster.NeuralProphet.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate model on holdout data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>df</strong> (<em>pd.DataFrame</em>) – containing column ‘ds’, ‘y’ with holdout data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>df with evaluation metrics</p>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="hdays.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Core Module Documentation</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="df_utils.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Core Module Documentation</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Oskar Triebe |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../_sources/module_links/forecaster.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    </body>
+</html>
