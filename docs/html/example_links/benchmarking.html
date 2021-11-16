@@ -157,7 +157,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="../model/README.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/quickstart.html">Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model-overview.html">Model Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/changes-from-prophet.html">Changes from prophet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/trend.html">Trend</a></li>
@@ -174,7 +174,6 @@
 <li class="toctree-l1"><a class="reference internal" href="autoregression_yosemite_temps.html">Autoregression</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Running benchmarking experiments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collect_predictions.html">Prediction Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="crossvalidation.html">Test and CrossValidate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
@@ -182,13 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trend_peyton_manning.html">Fitting a changing trend</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="energy_data_example.html">Example on PV forecasting dataset</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../module_links/__init__.html">__init__.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/configure.html">configure.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/df_utils.html">df_utils.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/forecaster.html">forecaster.py</a></li>
@@ -478,7 +472,7 @@ div.rendered_html tbody tr:hover {
 <section id="Running-benchmarking-experiments">
 <h1>Running benchmarking experiments<a class="headerlink" href="#Running-benchmarking-experiments" title="Permalink to this headline">¶</a></h1>
 <p>Note: The Benchmarking Framework does currently not properly support auto-regression or lagged covariates with multiple step ahead forecasts.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -489,11 +483,19 @@ div.rendered_html tbody tr:hover {
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">neuralprophet</span> <span class="kn">import</span> <span class="n">NeuralProphet</span><span class="p">,</span> <span class="n">set_log_level</span>
-<span class="kn">from</span> <span class="nn">neuralprophet.benchmark</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">NeuralProphetModel</span><span class="p">,</span> <span class="n">SimpleExperiment</span><span class="p">,</span> <span class="n">CrossValidationExperiment</span>
+<span class="kn">from</span> <span class="nn">neuralprophet.benchmark</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">NeuralProphetModel</span><span class="p">,</span> <span class="n">ProphetModel</span>
 <span class="kn">from</span> <span class="nn">neuralprophet.benchmark</span> <span class="kn">import</span> <span class="n">SimpleBenchmark</span><span class="p">,</span> <span class="n">CrossValidationBenchmark</span>
 <span class="n">set_log_level</span><span class="p">(</span><span class="s2">"ERROR"</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+WARNING - (NP.benchmark.&lt;module&gt;) - Benchmarking Framework is not covered by tests. Please report any bugs you find.
+</pre></div></div>
 </div>
 <section id="Load-data">
 <h2>Load data<a class="headerlink" href="#Load-data" title="Permalink to this headline">¶</a></h2>
@@ -508,7 +510,7 @@ div.rendered_html tbody tr:hover {
 <span class="n">peyton_manning_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_location</span> <span class="o">+</span> <span class="s1">'wp_log_peyton_manning.csv'</span><span class="p">)</span>
 <span class="c1"># retail_sales_df = pd.read_csv(data_location + 'retail_sales.csv')</span>
 <span class="c1"># yosemite_temps_df = pd.read_csv(data_location +  'yosemite_temps.csv')</span>
-<span class="c1"># ercot_load_df = pd.read_csv(data_location +  'ERCOT_load_2004_2021Sept.csv')[['ds', 'y']]</span>
+<span class="c1"># ercot_load_df = pd.read_csv(data_location +  'ERCOT_load.csv')[['ds', 'y']]</span>
 </pre></div>
 </div>
 </div>
@@ -523,14 +525,14 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">dataset_list</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">Dataset</span><span class="p">(</span><span class="n">df</span> <span class="o">=</span> <span class="n">air_passengers_df</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"air_passengers"</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="s2">"MS"</span><span class="p">),</span>
-    <span class="n">Dataset</span><span class="p">(</span><span class="n">df</span> <span class="o">=</span> <span class="n">peyton_manning_df</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">"peyton_manning"</span><span class="p">,</span> <span class="n">freq</span> <span class="o">=</span> <span class="s2">"D"</span><span class="p">),</span>
+    <span class="c1"># Dataset(df = peyton_manning_df, name = "peyton_manning", freq = "D"),</span>
     <span class="c1"># Dataset(df = retail_sales_df, name = "retail_sales", freq = "D"),</span>
     <span class="c1"># Dataset(df = yosemite_temps_df, name = "yosemite_temps", freq = "5min"),</span>
     <span class="c1"># Dataset(df = ercot_load_df, name = "ercot_load", freq = "H"),</span>
 <span class="p">]</span>
 <span class="n">model_classes_and_params</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">NeuralProphetModel</span><span class="p">,</span> <span class="p">{}),</span>
     <span class="p">(</span><span class="n">NeuralProphetModel</span><span class="p">,</span> <span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">,</span> <span class="s2">"learning_rate"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">}),</span>
+    <span class="p">(</span><span class="n">ProphetModel</span><span class="p">,</span> <span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">})</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -551,64 +553,37 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[(neuralprophet.benchmark.NeuralProphetModel, {}),
- (neuralprophet.benchmark.NeuralProphetModel,
-  {'seasonality_mode': 'multiplicative', 'learning_rate': 0.1})]
+[(neuralprophet.benchmark.NeuralProphetModel,
+  {'seasonality_mode': 'multiplicative', 'learning_rate': 0.1}),
+ (neuralprophet.benchmark.ProphetModel,
+  {'seasonality_mode': 'multiplicative'})]
 </pre></div></div>
 </div>
 </section>
 <section id="1.-SimpleBenchmark">
 <h2>1. SimpleBenchmark<a class="headerlink" href="#1.-SimpleBenchmark" title="Permalink to this headline">¶</a></h2>
 <p>Setting up a series of Train Test Experiments is quick:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">benchmark</span> <span class="o">=</span> <span class="n">SimpleBenchmark</span><span class="p">(</span>
     <span class="n">model_classes_and_params</span><span class="o">=</span><span class="n">model_classes_and_params</span><span class="p">,</span> <span class="c1"># iterate over this list of tuples</span>
     <span class="n">datasets</span><span class="o">=</span><span class="n">dataset_list</span><span class="p">,</span> <span class="c1"># iterate over this list</span>
-    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">"MAE"</span><span class="p">,</span> <span class="s2">"MSE"</span><span class="p">],</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">"MAE"</span><span class="p">,</span> <span class="s2">"MSE"</span><span class="p">,</span> <span class="s2">"MASE"</span><span class="p">,</span> <span class="s2">"RMSE"</span><span class="p">],</span>
     <span class="n">test_percentage</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">results_train</span><span class="p">,</span> <span class="n">results_val</span> <span class="o">=</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">results_train</span><span class="p">,</span> <span class="n">results_test</span> <span class="o">=</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "22fe02611dc74b66865e3614ddf8b4a7", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9f2ed482842544babd7cc8b8c2895c6f", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">results_val</span>
+<span></span><span class="n">results_test</span>
 </pre></div>
 </div>
 </div>
@@ -640,6 +615,8 @@ div.rendered_html tbody tr:hover {
 <th>params</th>
 <th>MAE</th>
 <th>MSE</th>
+<th>MASE</th>
+<th>RMSE</th>
 </tr>
 </thead>
 <tbody>
@@ -647,33 +624,21 @@ div.rendered_html tbody tr:hover {
 <th>0</th>
 <td>air_passengers</td>
 <td>NeuralProphet</td>
-<td>{}</td>
-<td>37.880005</td>
-<td>1861.208740</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>24.814017</td>
+<td>844.513472</td>
+<td>0.571375</td>
+<td>29.060514</td>
 </tr>
 <tr>
 <th>1</th>
 <td>air_passengers</td>
-<td>NeuralProphet</td>
-<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>24.567322</td>
-<td>829.572083</td>
-</tr>
-<tr>
-<th>2</th>
-<td>peyton_manning</td>
-<td>NeuralProphet</td>
-<td>{}</td>
-<td>0.865584</td>
-<td>0.984737</td>
-</tr>
-<tr>
-<th>3</th>
-<td>peyton_manning</td>
-<td>NeuralProphet</td>
-<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>0.859549</td>
-<td>1.002734</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>29.818648</td>
+<td>1142.139138</td>
+<td>0.686614</td>
+<td>33.795549</td>
 </tr>
 </tbody>
 </table></div>
@@ -683,106 +648,22 @@ div.rendered_html tbody tr:hover {
 <section id="2.-CrossValidationBenchmark">
 <h2>2. CrossValidationBenchmark<a class="headerlink" href="#2.-CrossValidationBenchmark" title="Permalink to this headline">¶</a></h2>
 <p>Setting up a series of crossvalidated experiments is just as simple:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">benchmark_cv</span> <span class="o">=</span> <span class="n">CrossValidationBenchmark</span><span class="p">(</span>
     <span class="n">model_classes_and_params</span><span class="o">=</span><span class="n">model_classes_and_params</span><span class="p">,</span> <span class="c1"># iterate over this list of tuples</span>
     <span class="n">datasets</span><span class="o">=</span><span class="n">dataset_list</span><span class="p">,</span> <span class="c1"># iterate over this list</span>
-    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">"MAE"</span><span class="p">,</span> <span class="s2">"MSE"</span><span class="p">],</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">"MASE"</span><span class="p">,</span> <span class="s2">"RMSE"</span><span class="p">],</span>
     <span class="n">test_percentage</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">num_folds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">fold_overlap_pct</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">results_summary</span><span class="p">,</span> <span class="n">results_train</span><span class="p">,</span> <span class="n">results_val</span> <span class="o">=</span> <span class="n">benchmark_cv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">results_summary</span><span class="p">,</span> <span class="n">results_train</span><span class="p">,</span> <span class="n">results_test</span> <span class="o">=</span> <span class="n">benchmark_cv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b8b65c90518b420891d7242cb13bdd2e", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e506a715a6724ca6ada559000e6f895e", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "82d240d65a514ef9a8172136724c9b18", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "de7bc694801148b5b97ce0b6332ed1b5", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4685ffa130614d2d8d6c4c2ddbca74bd", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e28ab3c6d7cb4e2c848cbbe380ea41bf", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-
-</pre></div></div>
 </div>
 <p>We now also get a summary DataFrame showing the metrics’ mean and standard deviation over all folds.</p>
 <div class="nbinput docutils container">
@@ -820,14 +701,11 @@ div.rendered_html tbody tr:hover {
 <th>data</th>
 <th>model</th>
 <th>params</th>
-<th>train_MAE</th>
-<th>train_MAE_std</th>
-<th>train_MSE</th>
-<th>train_MSE_std</th>
-<th>val_MAE</th>
-<th>val_MAE_std</th>
-<th>val_MSE</th>
-<th>val_MSE_std</th>
+<th>MASE</th>
+<th>RMSE</th>
+<th>MASE_std</th>
+<th>RMSE_std</th>
+<th>split</th>
 </tr>
 </thead>
 <tbody>
@@ -835,57 +713,45 @@ div.rendered_html tbody tr:hover {
 <th>0</th>
 <td>air_passengers</td>
 <td>NeuralProphet</td>
-<td>{}</td>
-<td>12.044887</td>
-<td>2.345866</td>
-<td>269.142184</td>
-<td>97.697214</td>
-<td>31.602827</td>
-<td>1.226379</td>
-<td>1382.688599</td>
-<td>37.422150</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>0.278579</td>
+<td>7.664800</td>
+<td>0.011388</td>
+<td>0.696316</td>
+<td>train</td>
 </tr>
 <tr>
 <th>1</th>
 <td>air_passengers</td>
-<td>NeuralProphet</td>
-<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>5.930183</td>
-<td>0.569491</td>
-<td>58.908799</td>
-<td>10.739192</td>
-<td>19.863913</td>
-<td>7.327437</td>
-<td>552.519643</td>
-<td>296.077245</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>0.310869</td>
+<td>8.616463</td>
+<td>0.021078</td>
+<td>1.266764</td>
+<td>train</td>
 </tr>
 <tr>
-<th>2</th>
-<td>peyton_manning</td>
-<td>NeuralProphet</td>
-<td>{}</td>
-<td>0.343056</td>
-<td>0.010012</td>
-<td>0.240888</td>
-<td>0.010701</td>
-<td>0.491042</td>
-<td>0.122674</td>
-<td>0.475405</td>
-<td>0.199389</td>
-</tr>
-<tr>
-<th>3</th>
-<td>peyton_manning</td>
+<th>0</th>
+<td>air_passengers</td>
 <td>NeuralProphet</td>
 <td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>0.340138</td>
-<td>0.008582</td>
-<td>0.240346</td>
-<td>0.010412</td>
-<td>0.547883</td>
-<td>0.164636</td>
-<td>0.579370</td>
-<td>0.296151</td>
+<td>0.482023</td>
+<td>22.380878</td>
+<td>0.140785</td>
+<td>5.769275</td>
+<td>test</td>
+</tr>
+<tr>
+<th>1</th>
+<td>air_passengers</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>0.479454</td>
+<td>22.778341</td>
+<td>0.109195</td>
+<td>4.224042</td>
+<td>test</td>
 </tr>
 </tbody>
 </table></div>
@@ -897,7 +763,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">air_passengers</span> <span class="o">=</span> <span class="n">results_summary</span><span class="p">[</span><span class="n">results_summary</span><span class="p">[</span><span class="s1">'data'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'air_passengers'</span><span class="p">]</span>
-<span class="n">plt</span> <span class="o">=</span> <span class="n">air_passengers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'params'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s1">'val_MAE'</span><span class="p">,</span> <span class="s1">'val_MAE_std'</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">)</span>
+<span class="n">air_passengers</span> <span class="o">=</span> <span class="n">air_passengers</span><span class="p">[</span><span class="n">air_passengers</span><span class="p">[</span><span class="s1">'split'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'test'</span><span class="p">]</span>
+<span class="n">plt</span> <span class="o">=</span> <span class="n">air_passengers</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">'model'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'RMSE'</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">'barh'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -914,7 +781,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">results_val</span>
+<span></span><span class="n">results_test</span>
 </pre></div>
 </div>
 </div>
@@ -944,8 +811,8 @@ div.rendered_html tbody tr:hover {
 <th>data</th>
 <th>model</th>
 <th>params</th>
-<th>MAE</th>
-<th>MSE</th>
+<th>MASE</th>
+<th>RMSE</th>
 </tr>
 </thead>
 <tbody>
@@ -953,38 +820,373 @@ div.rendered_html tbody tr:hover {
 <th>0</th>
 <td>air_passengers</td>
 <td>NeuralProphet</td>
-<td>{}</td>
-<td>[33.33087158203125, 30.86688232421875, 30.6107...</td>
-<td>[1341.7197265625, 1374.159423828125, 1432.1866...</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>[0.5014669235699923, 0.3006991286697633, 0.643...</td>
+<td>[20.975299319246627, 16.12341769010618, 30.043...</td>
 </tr>
 <tr>
 <th>1</th>
 <td>air_passengers</td>
-<td>NeuralProphet</td>
-<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>[16.515865325927734, 13.045002937316895, 30.03...</td>
-<td>[430.37823486328125, 266.7420959472656, 960.43...</td>
-</tr>
-<tr>
-<th>2</th>
-<td>peyton_manning</td>
-<td>NeuralProphet</td>
-<td>{}</td>
-<td>[0.6193802356719971, 0.5279689431190491, 0.325...</td>
-<td>[0.746871829032898, 0.4057277739048004, 0.2736...</td>
-</tr>
-<tr>
-<th>3</th>
-<td>peyton_manning</td>
-<td>NeuralProphet</td>
-<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
-<td>[0.741700291633606, 0.5627050399780273, 0.3392...</td>
-<td>[0.9896844029426575, 0.4469456672668457, 0.301...</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>[0.5885898654326461, 0.3302688815416577, 0.519...</td>
+<td>[24.617703272976527, 16.936631879241148, 26.78...</td>
 </tr>
 </tbody>
 </table></div>
 </div></div>
 </div>
+</section>
+<section id="3.-Manual-Benchmark">
+<h2>3. Manual Benchmark<a class="headerlink" href="#3.-Manual-Benchmark" title="Permalink to this headline">¶</a></h2>
+<p>If you need more control over the individual Experiments, you can set them up manually:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">neuralprophet.benchmark</span> <span class="kn">import</span> <span class="n">SimpleExperiment</span><span class="p">,</span> <span class="n">CrossValidationExperiment</span>
+<span class="kn">from</span> <span class="nn">neuralprophet.benchmark</span> <span class="kn">import</span> <span class="n">ManualBenchmark</span><span class="p">,</span> <span class="n">ManualCVBenchmark</span>
+</pre></div>
+</div>
+</div>
+<section id="3.1-ManualBenchmark:-Manual-SimpleExperiment-Benchmark">
+<h3>3.1 ManualBenchmark: Manual SimpleExperiment Benchmark<a class="headerlink" href="#3.1-ManualBenchmark:-Manual-SimpleExperiment-Benchmark" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">air_passengers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_location</span> <span class="o">+</span> <span class="s1">'air_passengers.csv'</span><span class="p">)</span>
+<span class="n">peyton_manning_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_location</span> <span class="o">+</span> <span class="s1">'wp_log_peyton_manning.csv'</span><span class="p">)</span>
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"MAE"</span><span class="p">,</span> <span class="s2">"MSE"</span><span class="p">,</span> <span class="s2">"RMSE"</span><span class="p">,</span> <span class="s2">"MASE"</span><span class="p">,</span> <span class="s2">"MSSE"</span><span class="p">,</span> <span class="s2">"MAPE"</span><span class="p">,</span> <span class="s2">"SMAPE"</span><span class="p">]</span>
+<span class="n">experiments</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">SimpleExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">NeuralProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">,</span> <span class="s2">"learning_rate"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">air_passengers_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"air_passengers"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"MS"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">SimpleExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">ProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">,</span> <span class="p">},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">air_passengers_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"air_passengers"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"MS"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">SimpleExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">NeuralProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"learning_rate"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">peyton_manning_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"peyton_manning"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">SimpleExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">ProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">peyton_manning_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"peyton_manning"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"D"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+<span class="n">benchmark</span> <span class="o">=</span> <span class="n">ManualBenchmark</span><span class="p">(</span>
+    <span class="n">experiments</span><span class="o">=</span><span class="n">experiments</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">results_train</span><span class="p">,</span> <span class="n">results_test</span> <span class="o">=</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results_test</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<div class="table-wrapper"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>data</th>
+<th>model</th>
+<th>params</th>
+<th>MAE</th>
+<th>MSE</th>
+<th>RMSE</th>
+<th>MASE</th>
+<th>MSSE</th>
+<th>MAPE</th>
+<th>SMAPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>air_passengers</td>
+<td>NeuralProphet</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>23.922920</td>
+<td>795.467295</td>
+<td>28.204030</td>
+<td>0.550857</td>
+<td>0.305727</td>
+<td>5.749847</td>
+<td>2.766594</td>
+</tr>
+<tr>
+<th>1</th>
+<td>air_passengers</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>29.818648</td>
+<td>1142.139138</td>
+<td>33.795549</td>
+<td>0.686614</td>
+<td>0.438966</td>
+<td>7.471930</td>
+<td>3.558548</td>
+</tr>
+<tr>
+<th>2</th>
+<td>peyton_manning</td>
+<td>NeuralProphet</td>
+<td>{'learning_rate': 0.1}</td>
+<td>0.544561</td>
+<td>0.409436</td>
+<td>0.639872</td>
+<td>1.542943</td>
+<td>1.537802</td>
+<td>7.006563</td>
+<td>3.374985</td>
+</tr>
+<tr>
+<th>3</th>
+<td>peyton_manning</td>
+<td>Prophet</td>
+<td>{}</td>
+<td>0.594528</td>
+<td>0.463643</td>
+<td>0.680913</td>
+<td>1.684520</td>
+<td>1.741397</td>
+<td>7.673804</td>
+<td>3.682554</td>
+</tr>
+</tbody>
+</table></div>
+</div></div>
+</div>
+</section>
+<section id="3.2-ManualCVBenchmark:-Manual-CrossValidationExperiment-Benchmark">
+<h3>3.2 ManualCVBenchmark: Manual CrossValidationExperiment Benchmark<a class="headerlink" href="#3.2-ManualCVBenchmark:-Manual-CrossValidationExperiment-Benchmark" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">air_passengers_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_location</span> <span class="o">+</span> <span class="s1">'air_passengers.csv'</span><span class="p">)</span>
+<span class="n">experiments</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">CrossValidationExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">NeuralProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">,</span> <span class="s2">"learning_rate"</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">air_passengers_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"air_passengers"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"MS"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">num_folds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">fold_overlap_pct</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">CrossValidationExperiment</span><span class="p">(</span>
+        <span class="n">model_class</span><span class="o">=</span><span class="n">ProphetModel</span><span class="p">,</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">"seasonality_mode"</span><span class="p">:</span> <span class="s2">"multiplicative"</span><span class="p">,</span> <span class="p">},</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">Dataset</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">air_passengers_df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"air_passengers"</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s2">"MS"</span><span class="p">),</span>
+        <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+        <span class="n">test_percentage</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">num_folds</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">fold_overlap_pct</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">),</span>
+<span class="p">]</span>
+<span class="n">benchmark_cv</span> <span class="o">=</span> <span class="n">ManualCVBenchmark</span><span class="p">(</span>
+    <span class="n">experiments</span><span class="o">=</span><span class="n">experiments</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">results_summary</span><span class="p">,</span> <span class="n">results_train</span><span class="p">,</span> <span class="n">results_test</span> <span class="o">=</span> <span class="n">benchmark_cv</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">results_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<div class="table-wrapper"><table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>data</th>
+<th>model</th>
+<th>params</th>
+<th>MAE</th>
+<th>MSE</th>
+<th>RMSE</th>
+<th>MASE</th>
+<th>MSSE</th>
+<th>MAPE</th>
+<th>SMAPE</th>
+<th>MAE_std</th>
+<th>MSE_std</th>
+<th>RMSE_std</th>
+<th>MASE_std</th>
+<th>MSSE_std</th>
+<th>MAPE_std</th>
+<th>SMAPE_std</th>
+<th>split</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>air_passengers</td>
+<td>NeuralProphet</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>6.016460</td>
+<td>61.312444</td>
+<td>7.806123</td>
+<td>0.282338</td>
+<td>0.081969</td>
+<td>3.053079</td>
+<td>1.512873</td>
+<td>0.573447</td>
+<td>9.319967</td>
+<td>0.613913</td>
+<td>0.013311</td>
+<td>0.009355</td>
+<td>0.106123</td>
+<td>0.053336</td>
+<td>train</td>
+</tr>
+<tr>
+<th>1</th>
+<td>air_passengers</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>6.655735</td>
+<td>75.848123</td>
+<td>8.616463</td>
+<td>0.310869</td>
+<td>0.098696</td>
+<td>3.089578</td>
+<td>1.553327</td>
+<td>0.952939</td>
+<td>20.968356</td>
+<td>1.266764</td>
+<td>0.021078</td>
+<td>0.014689</td>
+<td>0.261419</td>
+<td>0.132790</td>
+<td>train</td>
+</tr>
+<tr>
+<th>0</th>
+<td>air_passengers</td>
+<td>NeuralProphet</td>
+<td>{'seasonality_mode': 'multiplicative', 'learni...</td>
+<td>19.514176</td>
+<td>528.803367</td>
+<td>22.342478</td>
+<td>0.482325</td>
+<td>0.233347</td>
+<td>4.630512</td>
+<td>2.340100</td>
+<td>6.610696</td>
+<td>252.724588</td>
+<td>5.442155</td>
+<td>0.135160</td>
+<td>0.089620</td>
+<td>1.386856</td>
+<td>0.732939</td>
+<td>test</td>
+</tr>
+<tr>
+<th>1</th>
+<td>air_passengers</td>
+<td>Prophet</td>
+<td>{'seasonality_mode': 'multiplicative'}</td>
+<td>19.052098</td>
+<td>536.695336</td>
+<td>22.778341</td>
+<td>0.479454</td>
+<td>0.249282</td>
+<td>4.604149</td>
+<td>2.272174</td>
+<td>3.876074</td>
+<td>182.404522</td>
+<td>4.224042</td>
+<td>0.109195</td>
+<td>0.103208</td>
+<td>0.710556</td>
+<td>0.353903</td>
+<td>test</td>
+</tr>
+</tbody>
+</table></div>
+</div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1046,6 +1248,11 @@ div.rendered_html tbody tr:hover {
 <li><a class="reference internal" href="#0.-Configure-Datasets-and-Model-Parameters">0. Configure Datasets and Model Parameters</a></li>
 <li><a class="reference internal" href="#1.-SimpleBenchmark">1. SimpleBenchmark</a></li>
 <li><a class="reference internal" href="#2.-CrossValidationBenchmark">2. CrossValidationBenchmark</a></li>
+<li><a class="reference internal" href="#3.-Manual-Benchmark">3. Manual Benchmark</a><ul>
+<li><a class="reference internal" href="#3.1-ManualBenchmark:-Manual-SimpleExperiment-Benchmark">3.1 ManualBenchmark: Manual SimpleExperiment Benchmark</a></li>
+<li><a class="reference internal" href="#3.2-ManualCVBenchmark:-Manual-CrossValidationExperiment-Benchmark">3.2 ManualCVBenchmark: Manual CrossValidationExperiment Benchmark</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

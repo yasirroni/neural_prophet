@@ -11,12 +11,7 @@ m = NeuralProphet(
     daily_seasonality=False,
 )
 metrics = m.fit(df, freq="D")
-
-```
-
-```python
-future = m.make_future_dataframe(df, periods=365, n_historic_predictions=len(df))
-forecast = m.predict(future)
+forecast = m.predict(df)
 ```
 
 The components plot looks like below with only trend and residuals as a components.

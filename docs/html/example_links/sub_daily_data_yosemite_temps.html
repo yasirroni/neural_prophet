@@ -157,7 +157,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="../model/README.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/quickstart.html">Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model-overview.html">Model Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/changes-from-prophet.html">Changes from prophet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/trend.html">Trend</a></li>
@@ -174,7 +174,6 @@
 <li class="toctree-l1"><a class="reference internal" href="autoregression_yosemite_temps.html">Autoregression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmarking.html">Running benchmarking experiments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collect_predictions.html">Prediction Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="crossvalidation.html">Test and CrossValidate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
@@ -182,13 +181,8 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Sub-daily data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trend_peyton_manning.html">Fitting a changing trend</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="energy_data_example.html">Example on PV forecasting dataset</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../module_links/__init__.html">__init__.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/configure.html">configure.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/df_utils.html">df_utils.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/forecaster.html">forecaster.py</a></li>
@@ -517,8 +511,7 @@ div.rendered_html tbody tr:hover {
     <span class="n">weekly_seasonality</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">metrics</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'5min'</span><span class="p">)</span>
-<span class="n">future</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">make_future_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">7</span><span class="o">*</span><span class="mi">288</span><span class="p">,</span> <span class="n">n_historic_predictions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">forecast</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">future</span><span class="p">)</span>
+<span class="n">forecast</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
 <span class="c1"># fig_comp = m.plot_components(forecast)</span>
 <span class="n">fig_param</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">plot_parameters</span><span class="p">()</span>
@@ -571,8 +564,7 @@ div.rendered_html tbody tr:hover {
     <span class="n">daily_seasonality</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">metrics</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">'5min'</span><span class="p">)</span>
-<span class="n">future</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">make_future_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">60</span><span class="o">//</span><span class="mi">5</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">7</span><span class="p">,</span> <span class="n">n_historic_predictions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">forecast</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">future</span><span class="p">)</span>
+<span class="n">forecast</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">forecast</span><span class="p">)</span>
 <span class="c1"># fig_comp = m.plot_components(forecast)</span>
 <span class="n">fig_param</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">plot_parameters</span><span class="p">()</span>

@@ -62,16 +62,9 @@ m = m.add_future_regressor(name='A')
 m = m.add_future_regressor(name='B')
 
 metrics = m.fit(df, freq="D")
+forecast = m.predict(df)
 ```
 
-When forecasting, the future dataframe must be created by providing the future values
-of the regressors. To do that, now you need to call the `make_future_dataframe` function
-by providing the previously created `future_regressors_df` as an argument.
-
-```python
-future = m.make_future_dataframe(df=df, regressors_df=future_regressors_df, periods=3)
-forecast = m.predict(df=future)
-```
 Now you can plot the components the same way as before and the resulting plot would look something
 like below.
 

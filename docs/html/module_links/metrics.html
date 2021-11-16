@@ -157,7 +157,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="../model/README.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model/quickstart.html">Quick Start Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/model-overview.html">Model Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/changes-from-prophet.html">Changes from prophet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../model/trend.html">Trend</a></li>
@@ -174,7 +174,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../example_links/autoregression_yosemite_temps.html">Autoregression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/benchmarking.html">Running benchmarking experiments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/collect_predictions.html">Prediction Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../example_links/crossvalidation.html">Test and CrossValidate</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
@@ -182,13 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../example_links/sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../example_links/trend_peyton_manning.html">Fitting a changing trend</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../example_links/energy_data_example.html">Example on PV forecasting dataset</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="__init__.html">__init__.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configure.html">configure.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="df_utils.html">df_utils.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="forecaster.html">forecaster.py</a></li>
@@ -483,6 +477,36 @@ Note: if the correct name is not supplied, the metric is not updated.</p></li>
 containing average values over batch/update step</p></li>
 <li><p><strong>num</strong> (<em>int</em>) – number of samples in batch/update step</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+</dd></dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="neuralprophet.metrics.RMSE">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">neuralprophet.metrics.</span></span><span class="sig-name descname"><span class="pre">RMSE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specific_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.metrics.RMSE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the root mean squared error.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.metrics.RMSE.new">
+<span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specific_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.metrics.RMSE.new" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specific_column</strong> (<em>int</em>) – calculate metric only over target at pos</p></li>
+<li><p><strong>shift_scale</strong> (<em>tuple</em><em>, </em><em>float</em>) – data shift and scale parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>copy of metric instance, reset</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="neuralprophet.metrics.RMSE.set_shift_scale">
+<span class="sig-name descname"><span class="pre">set_shift_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shift_scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neuralprophet.metrics.RMSE.set_shift_scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds data denormalization params.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>shift_scale</strong> (<em>tuple</em><em>, </em><em>float</em>) – data shift and scale parameters</p>
 </dd>
 </dl>
 </dd></dl>

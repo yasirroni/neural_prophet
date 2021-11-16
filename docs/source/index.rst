@@ -9,8 +9,10 @@ NeuralProphet
 
 *A simple time series forecasting framework based on Neural Networks in PyTorch.*
 
+View `NeuralProphet on Github <https://github.com/ourownstory/neural_prophet>`_.
 
-Documentation
+
+Guides
 ==============
 
 .. toctree::
@@ -30,7 +32,7 @@ Documentation
    Contribution<model/contribute>
 
 
-Get started with Python Notebooks
+Tutorial Notebooks
 ==================================
 
 .. toctree::
@@ -56,14 +58,13 @@ Get started with Python Notebooks
    example_links/energy_data_example.nblink
 
 
-Core Modules
-=============
+Code Documenations
+======================
 
 .. toctree::
    :maxdepth: 1
    :caption: Core Modules
 
-   __init__.py <module_links/__init__>
    configure.py <module_links/configure>
    df_utils.py <module_links/df_utils>
    forecaster.py <module_links/forecaster>

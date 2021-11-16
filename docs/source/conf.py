@@ -14,6 +14,7 @@
 
 import os
 import sys
+import sphinx_fontawesome
 
 # sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath("../.."))
@@ -39,7 +40,9 @@ extensions = [
     "sphinx.ext.napoleon",
     "nbsphinx",
     "nbsphinx_link",
+    "sphinx_fontawesome",
 ]
+
 
 # Here to describe what format of files are parsed
 source_suffix = {

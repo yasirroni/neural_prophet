@@ -54,7 +54,6 @@ fig_model = m.plot_parameters()
 If you want to forecast into the unknown future, extend the dataframe before predicting:
 ```python
 m = NeuralProphet().fit(df, freq="D")
-df_future = m.make_future_dataframe(df, periods=30)
 forecast = m.predict(df_future)
 fig_forecast = m.plot(forecast)
 ```

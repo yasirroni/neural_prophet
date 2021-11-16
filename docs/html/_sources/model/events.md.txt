@@ -91,15 +91,7 @@ After that, we can simply fit the model as below by providing to the `fit` funct
 
 ```python
 metrics = m.fit(history_df, freq="D")
-```
-
-To do forecasting with the fitted model, we first need to create the future dataframe with events
-information. This can be done with the `make_future_dataframe` function by passing in the created
-`future_events_df` and specifying the desired size of the forecast horizon.
-
-```python
-future = m.make_future_dataframe(df=history_df, events_df=future_events_df, periods=10)
-forecast = m.predict(df=future)
+forecast = m.predict(df=history_df)
 ```
 <The produced forecasts look like below. The 10 step-ahead forecasts are available in the yhat1 column.
 The components from the individual events are available in the event_playoff and event_superbowl columns and 
