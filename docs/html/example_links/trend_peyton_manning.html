@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Core Module Documentation" href="../module_links/configure.html" /><link rel="prev" title="Sub-daily data" href="sub_daily_data_yosemite_temps.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Building load forecasting: Hospital in SF" href="energy_hospital_load.html" /><link rel="prev" title="Sub-daily data" href="sub_daily_data_yosemite_temps.html" />
 
     <link rel="shortcut icon" href="../_static/np_favicon.png"/><meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
         <title>Fitting a changing trend - NeuralProphet documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
     
     
@@ -18,6 +19,8 @@
   body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
+  --font-stack: -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-stack--monospace: 'SFMono-Regular',Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
   
   }
   body[data-theme="dark"] {
@@ -112,7 +115,17 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
-
+<div class="announcement">
+  <aside class="announcement-content">
+     
+        <a style="text-decoration: none; color: white;" 
+           href="https://github.com/ourownstory/neural_prophet/blob/master/notes/NeuralProphet_Facebook_AI_Summit.pdf" target="_blank">
+           Checkout NeuralProphet @ Facebook AI Summit
+           <img src="./_static/rocket.png" width="16" height="16">
+        </a>
+     
+  </aside>
+</div>
 
 <div class="page">
   <header class="mobile-header">
@@ -123,7 +136,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">NeuralProphet  documentation</div></a>
+      <a href="../contents.html"><div class="brand">NeuralProphet  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,35 +156,45 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
-  
-  <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../_static/np_logo.png" alt="Logo"/>
-  </div>
-  
-  
-</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../contents.html">
+    
+    <div class="sidebar-logo-container">
+      <img class="sidebar-logo" src="../_static/np_highres.svg" alt="Logo"/>
+    </div>
+    <div class="github-button-container">
+      <a class="github-button" href="https://github.com/ourownstory/neural_prophet" 
+        data-size="large" data-show-count="true" aria-label="Star ourownstory/neural_prophet on GitHub">GitHub
+      </a>
+    </div>
+    
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
+    
+</a> 
+<form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="../model/quickstart.html">Quick Start Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/model-overview.html">Model Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/changes-from-prophet.html">Changes from prophet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/trend.html">Trend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/seasonality.html">Seasonality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/auto-regression.html">Auto-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/lagged-regressors.html">Lagged-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/events.html">Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/future-regressors.html">Future-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/hyperparameter-selection.html">Hyperparameter-selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../model/contribute.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../model-overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changes-from-prophet.html">Changes from prophet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trend.html">Trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seasonality.html">Seasonality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto-regression.html">Auto-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lagged-regressors.html">Lagged-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future-regressors.html">Future-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hyperparameter-selection.html">Hyperparameter-selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="autoregression_yosemite_temps.html">Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoregression_yosemite_temps.html">Autoregression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmarking.html">Running benchmarking experiments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collect_predictions.html">Prediction Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
@@ -181,9 +204,14 @@
 <li class="toctree-l1"><a class="reference internal" href="sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Fitting a changing trend</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
+<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../module_links/configure.html">configure.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="energy_hospital_load.html">Building load forecasting: Hospital in SF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="energy_solar_pv.html">Renewable Energy: Forecasting hourly solar irradiance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Documentations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configure.html">configure.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/df_utils.html">df_utils.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/forecaster.html">forecaster.py</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../module_links/hdays.html">hdays.py</a></li>
@@ -829,12 +857,12 @@ div.rendered_html tbody tr:hover {
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../module_links/configure.html">
+          <a class="next-page" href="energy_hospital_load.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Core Module Documentation</div>
+                <div class="title">Building load forecasting: Hospital in SF</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>

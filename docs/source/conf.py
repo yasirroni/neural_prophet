@@ -67,13 +67,43 @@ exclude_patterns = []
 #
 html_theme = "furo"
 html_favicon = "images/np_favicon.png"
-html_logo = "images/np_logo.png"
+html_logo = "images/np_highres.svg"
+# html_logo = "images/logo.png"
 html_theme_options: Dict[str, Any] = {
+    "announcement": """
+        <a style=\"text-decoration: none; color: white;\" 
+           href=\"https://github.com/ourownstory/neural_prophet/blob/master/notes/NeuralProphet_Facebook_AI_Summit.pdf\" target=\"_blank\">
+           Checkout NeuralProphet @ Facebook AI Summit
+           <img src=\"./_static/rocket.png\" width=\"16\" height=\"16\">
+        </a>
+    """,
     "sidebar_hide_name": True,
     "navigation_with_keys": True,
+    "light_css_variables": {
+        "font-stack": "-apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
+        "font-stack--monospace": "'SFMono-Regular',Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace",
+    },
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+
+# html_sidebars = { '**': [
+#     "_templates/sidebar/brand.html",
+#     "sidebar/search.html",
+#     "sidebar/scroll-start.html",
+#     "sidebar/navigation.html",
+#     "sidebar/ethical-ads.html",
+#     "sidebar/scroll-end.html",
+# ] }
+
+# change index.rst to contents.rst for custom landing page feature
+master_doc = "contents"
+
+html_additional_pages = {"index": "index.html"}
+
+
+def setup(app):
+    app.add_css_file("css/custom.css")  # may also be an URL

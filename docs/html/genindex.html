@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="_static/np_favicon.png"/><meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/><title>Index - NeuralProphet documentation</title>
 <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
     
     
@@ -16,6 +17,8 @@
   body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
+  --font-stack: -apple-system, 'system-ui', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-stack--monospace: 'SFMono-Regular',Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace;
   
   }
   body[data-theme="dark"] {
@@ -110,7 +113,17 @@
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
-
+<div class="announcement">
+  <aside class="announcement-content">
+     
+        <a style="text-decoration: none; color: white;" 
+           href="https://github.com/ourownstory/neural_prophet/blob/master/notes/NeuralProphet_Facebook_AI_Summit.pdf" target="_blank">
+           Checkout NeuralProphet @ Facebook AI Summit
+           <img src="./_static/rocket.png" width="16" height="16">
+        </a>
+     
+  </aside>
+</div>
 
 <div class="page">
   <header class="mobile-header">
@@ -121,7 +134,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">NeuralProphet  documentation</div></a>
+      <a href="contents.html"><div class="brand">NeuralProphet  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -141,57 +154,73 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
-  
-  <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/np_logo.png" alt="Logo"/>
-  </div>
-  
-  
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="contents.html">
+    
+    <div class="sidebar-logo-container">
+      <img class="sidebar-logo" src="_static/np_highres.svg" alt="Logo"/>
+    </div>
+    <div class="github-button-container">
+      <a class="github-button" href="https://github.com/ourownstory/neural_prophet" 
+        data-size="large" data-show-count="true" aria-label="Star ourownstory/neural_prophet on GitHub">GitHub
+      </a>
+    </div>
+    
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    
+    
+</a> 
+<form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul>
-<li class="toctree-l1"><a class="reference internal" href="model/quickstart.html">Quick Start Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/model-overview.html">Model Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/changes-from-prophet.html">Changes from prophet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/trend.html">Trend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/seasonality.html">Seasonality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/auto-regression.html">Auto-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/lagged-regressors.html">Lagged-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/events.html">Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/future-regressors.html">Future-regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/hyperparameter-selection.html">Hyperparameter-selection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model/contribute.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model-overview.html">Model Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes-from-prophet.html">Changes from prophet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trend.html">Trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="seasonality.html">Seasonality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto-regression.html">Auto-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagged-regressors.html">Lagged-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future-regressors.html">Future-regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperparameter-selection.html">Hyperparameter-selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contribution</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="example_links/autoregression_yosemite_temps.html">Autoregression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/benchmarking.html">Running benchmarking experiments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/collect_predictions.html">Prediction Collection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/sparse_autoregression_yosemite_temps.html">Sparse Autoregression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_links/trend_peyton_manning.html">Fitting a changing trend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoregression_yosemite_temps.html">Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarking.html">Running benchmarking experiments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collect_predictions.html">Prediction Collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_and_crossvalidate.html">Test and CrossValidate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagged_covariates_energy_ercot.html">Using Lagged Covariates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events_holidays_peyton_manning.html">Modeling Holidays and Special Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="season_multiplicative_air_travel.html">Multiplicative Seasonality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sparse_autoregression_yosemite_temps.html">Sparse Autoregression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sub_daily_data_yosemite_temps.html">Sub-daily data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trend_peyton_manning.html">Fitting a changing trend</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Core Modules</span></p>
+<p class="caption" role="heading"><span class="caption-text">Application Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="module_links/configure.html">configure.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/df_utils.html">df_utils.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/forecaster.html">forecaster.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/hdays.html">hdays.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/metrics.html">metrics.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/plot_forecast.html">plot_forecaster.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/plot_model_parameters.html">plot_model_parameters.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/time_dataset.html">time_dataset.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/time_net.html">time_net.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/utils_torch.html">utils_torch.py</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_links/utils.html">utils.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="energy_hospital_load.html">Building load forecasting: Hospital in SF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="energy_solar_pv.html">Renewable Energy: Forecasting hourly solar irradiance</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Code Documentations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="configure.html">configure.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="df_utils.html">df_utils.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forecaster.html">forecaster.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hdays.html">hdays.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">metrics.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_forecast.html">plot_forecaster.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_model_parameters.html">plot_model_parameters.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_dataset.html">time_dataset.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_net.html">time_net.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils_torch.html">utils_torch.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils.py</a></li>
 </ul>
 
 </div>
@@ -227,33 +256,33 @@
   <h2>A</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.add_country_holidays">add_country_holidays() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.add_country_holidays">add_country_holidays() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.add_events">add_events() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.add_events">add_events() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.add_future_regressor">add_future_regressor() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.add_future_regressor">add_future_regressor() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.add_lagged_regressor">add_lagged_regressor() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.add_lagged_regressor">add_lagged_regressor() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.add_missing_dates_nan">add_missing_dates_nan() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.add_missing_dates_nan">add_missing_dates_nan() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.add_seasonality">add_seasonality() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.add_seasonality">add_seasonality() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.add_specific_target">add_specific_target() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.add_specific_target">add_specific_target() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.all_covariates">all_covariates() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.all_covariates">all_covariates() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.all_seasonalities">all_seasonalities() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.all_seasonalities">all_seasonalities() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.AllSeason">AllSeason (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.AllSeason">AllSeason (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.AR">AR (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.AR">AR (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.ar_weights">ar_weights (neuralprophet.time_net.TimeNet property)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.ar_weights">ar_weights (neuralprophet.time_net.TimeNet property)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.auto_regression">auto_regression() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.auto_regression">auto_regression() (neuralprophet.time_net.TimeNet method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -263,13 +292,13 @@
   <h2>B</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.BatchMetric">BatchMetric (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.BatchMetric">BatchMetric (class in neuralprophet.metrics)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.Belarus">Belarus (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.Belarus">Belarus (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.BY">BY (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.BY">BY (class in neuralprophet.hdays)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -279,32 +308,32 @@
   <h2>C</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.check_dataframe">check_dataframe() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.check_dataframe">check_dataframe() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric.compute">compute() (neuralprophet.metrics.Metric method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.Metric.compute">compute() (neuralprophet.metrics.Metric method)</a>
 
         <ul>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.compute">(neuralprophet.metrics.MetricsCollection method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.compute">(neuralprophet.metrics.MetricsCollection method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.compute_components">compute_components() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.compute_components">compute_components() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.convert_events_to_features">convert_events_to_features() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.convert_events_to_features">convert_events_to_features() (in module neuralprophet.df_utils)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Covar">Covar (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Covar">Covar (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.covariate">covariate() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.covariate">covariate() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.create_df_with_events">create_df_with_events() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.create_df_with_events">create_df_with_events() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.create_event_names_for_offsets">create_event_names_for_offsets() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.create_event_names_for_offsets">create_event_names_for_offsets() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.crossvalidation_split_df">crossvalidation_split_df() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.crossvalidation_split_df">crossvalidation_split_df() (in module neuralprophet.df_utils)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.crossvalidation_split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.crossvalidation_split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
     </ul></td>
@@ -315,16 +344,16 @@
   <h2>D</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.data_params_definition">data_params_definition() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.data_params_definition">data_params_definition() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.DeepNet">DeepNet (class in neuralprophet.time_net)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.DeepNet">DeepNet (class in neuralprophet.time_net)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.double_crossvalidation_split_df">double_crossvalidation_split_df() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.double_crossvalidation_split_df">double_crossvalidation_split_df() (in module neuralprophet.df_utils)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.double_crossvalidation_split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.double_crossvalidation_split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
     </ul></td>
@@ -335,11 +364,11 @@
   <h2>E</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Event">Event (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Event">Event (class in neuralprophet.configure)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/utils.html#neuralprophet.utils.events_config_to_model_dims">events_config_to_model_dims() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.events_config_to_model_dims">events_config_to_model_dims() (in module neuralprophet.utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -349,27 +378,27 @@
   <h2>F</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/utils.html#neuralprophet.utils.fcst_df_to_last_forecast">fcst_df_to_last_forecast() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.fcst_df_to_last_forecast">fcst_df_to_last_forecast() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.fill_linear_then_rolling_avg">fill_linear_then_rolling_avg() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.fill_linear_then_rolling_avg">fill_linear_then_rolling_avg() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.fit">fit() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.fit">fit() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.FlatNet">FlatNet (class in neuralprophet.time_net)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.FlatNet">FlatNet (class in neuralprophet.time_net)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.DeepNet.forward">forward() (neuralprophet.time_net.DeepNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.DeepNet.forward">forward() (neuralprophet.time_net.DeepNet method)</a>
 
         <ul>
-          <li><a href="module_links/time_net.html#neuralprophet.time_net.FlatNet.forward">(neuralprophet.time_net.FlatNet method)</a>
+          <li><a href="time_net.html#neuralprophet.time_net.FlatNet.forward">(neuralprophet.time_net.FlatNet method)</a>
 </li>
-          <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.forward">(neuralprophet.time_net.TimeNet method)</a>
+          <li><a href="time_net.html#neuralprophet.time_net.TimeNet.forward">(neuralprophet.time_net.TimeNet method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.fourier_series">fourier_series() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.fourier_series">fourier_series() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.fourier_series_t">fourier_series_t() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.fourier_series_t">fourier_series_t() (in module neuralprophet.time_dataset)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -379,23 +408,23 @@
   <h2>G</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.get_covar_weights">get_covar_weights() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.get_covar_weights">get_covar_weights() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.get_event_weights">get_event_weights() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.get_event_weights">get_event_weights() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.get_holidays_from_country">get_holidays_from_country() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.get_holidays_from_country">get_holidays_from_country() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.get_reg_weights">get_reg_weights() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.get_reg_weights">get_reg_weights() (neuralprophet.time_net.TimeNet method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.get_stored">get_stored() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.get_stored">get_stored() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.get_stored_as_df">get_stored_as_df() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.get_stored_as_df">get_stored_as_df() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.get_trend_deltas">get_trend_deltas (neuralprophet.time_net.TimeNet property)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.get_trend_deltas">get_trend_deltas (neuralprophet.time_net.TimeNet property)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.GlobalTimeDataset">GlobalTimeDataset (class in neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.GlobalTimeDataset">GlobalTimeDataset (class in neuralprophet.time_dataset)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -405,13 +434,13 @@
   <h2>H</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.handle_missing_data">handle_missing_data() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.handle_missing_data">handle_missing_data() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.highlight_nth_step_ahead_of_each_forecast">highlight_nth_step_ahead_of_each_forecast() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.highlight_nth_step_ahead_of_each_forecast">highlight_nth_step_ahead_of_each_forecast() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Holidays">Holidays (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Holidays">Holidays (class in neuralprophet.configure)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -421,15 +450,15 @@
   <h2>I</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.ID">ID (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.ID">ID (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.Indonesia">Indonesia (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.Indonesia">Indonesia (class in neuralprophet.hdays)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.TimeDataset.init_after_tabularized">init_after_tabularized() (neuralprophet.time_dataset.TimeDataset method)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.TimeDataset.init_after_tabularized">init_after_tabularized() (neuralprophet.time_dataset.TimeDataset method)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.init_data_params">init_data_params() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.init_data_params">init_data_params() (in module neuralprophet.df_utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -439,7 +468,7 @@
   <h2>J</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.join_dataframes">join_dataframes() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.join_dataframes">join_dataframes() (in module neuralprophet.df_utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -449,7 +478,7 @@
   <h2>L</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.LossMetric">LossMetric (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.LossMetric">LossMetric (class in neuralprophet.metrics)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -459,54 +488,52 @@
   <h2>M</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MAE">MAE (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MAE">MAE (class in neuralprophet.metrics)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.make_country_specific_holidays_df">make_country_specific_holidays_df() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.make_country_specific_holidays_df">make_country_specific_holidays_df() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.make_events_features">make_events_features() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.make_events_features">make_events_features() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.make_future_df">make_future_df() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.make_future_df">make_future_df() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.make_regressors_features">make_regressors_features() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.make_regressors_features">make_regressors_features() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric">Metric (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.Metric">Metric (class in neuralprophet.metrics)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection">MetricsCollection (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection">MetricsCollection (class in neuralprophet.metrics)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Model">Model (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Model">Model (class in neuralprophet.configure)</a>
 </li>
         <li>
     module
 
         <ul>
-          <li><a href="module_links/__init__.html#module-neuralprophet.__init__">neuralprophet.__init__</a>
+          <li><a href="configure.html#module-neuralprophet.configure">neuralprophet.configure</a>
 </li>
-          <li><a href="module_links/configure.html#module-neuralprophet.configure">neuralprophet.configure</a>
+          <li><a href="df_utils.html#module-neuralprophet.df_utils">neuralprophet.df_utils</a>
 </li>
-          <li><a href="module_links/df_utils.html#module-neuralprophet.df_utils">neuralprophet.df_utils</a>
+          <li><a href="forecaster.html#module-neuralprophet.forecaster">neuralprophet.forecaster</a>
 </li>
-          <li><a href="module_links/forecaster.html#module-neuralprophet.forecaster">neuralprophet.forecaster</a>
+          <li><a href="hdays.html#module-neuralprophet.hdays">neuralprophet.hdays</a>
 </li>
-          <li><a href="module_links/hdays.html#module-neuralprophet.hdays">neuralprophet.hdays</a>
+          <li><a href="metrics.html#module-neuralprophet.metrics">neuralprophet.metrics</a>
 </li>
-          <li><a href="module_links/metrics.html#module-neuralprophet.metrics">neuralprophet.metrics</a>
+          <li><a href="plot_forecast.html#module-neuralprophet.plot_forecast">neuralprophet.plot_forecast</a>
 </li>
-          <li><a href="module_links/plot_forecast.html#module-neuralprophet.plot_forecast">neuralprophet.plot_forecast</a>
+          <li><a href="plot_model_parameters.html#module-neuralprophet.plot_model_parameters">neuralprophet.plot_model_parameters</a>
 </li>
-          <li><a href="module_links/plot_model_parameters.html#module-neuralprophet.plot_model_parameters">neuralprophet.plot_model_parameters</a>
+          <li><a href="time_dataset.html#module-neuralprophet.time_dataset">neuralprophet.time_dataset</a>
 </li>
-          <li><a href="module_links/time_dataset.html#module-neuralprophet.time_dataset">neuralprophet.time_dataset</a>
+          <li><a href="time_net.html#module-neuralprophet.time_net">neuralprophet.time_net</a>
 </li>
-          <li><a href="module_links/time_net.html#module-neuralprophet.time_net">neuralprophet.time_net</a>
+          <li><a href="utils.html#module-neuralprophet.utils">neuralprophet.utils</a>
 </li>
-          <li><a href="module_links/utils.html#module-neuralprophet.utils">neuralprophet.utils</a>
-</li>
-          <li><a href="module_links/utils_torch.html#module-neuralprophet.utils_torch">neuralprophet.utils_torch</a>
+          <li><a href="utils_torch.html#module-neuralprophet.utils_torch">neuralprophet.utils_torch</a>
 </li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MSE">MSE (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MSE">MSE (class in neuralprophet.metrics)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -516,62 +543,55 @@
   <h2>N</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet">NeuralProphet (class in neuralprophet.forecaster)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet">NeuralProphet (class in neuralprophet.forecaster)</a>
 </li>
-        <li>
-    neuralprophet.__init__
-
-        <ul>
-          <li><a href="module_links/__init__.html#module-neuralprophet.__init__">module</a>
-</li>
-        </ul></li>
         <li>
     neuralprophet.configure
 
         <ul>
-          <li><a href="module_links/configure.html#module-neuralprophet.configure">module</a>
+          <li><a href="configure.html#module-neuralprophet.configure">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.df_utils
 
         <ul>
-          <li><a href="module_links/df_utils.html#module-neuralprophet.df_utils">module</a>
+          <li><a href="df_utils.html#module-neuralprophet.df_utils">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.forecaster
 
         <ul>
-          <li><a href="module_links/forecaster.html#module-neuralprophet.forecaster">module</a>
+          <li><a href="forecaster.html#module-neuralprophet.forecaster">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.hdays
 
         <ul>
-          <li><a href="module_links/hdays.html#module-neuralprophet.hdays">module</a>
+          <li><a href="hdays.html#module-neuralprophet.hdays">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.metrics
 
         <ul>
-          <li><a href="module_links/metrics.html#module-neuralprophet.metrics">module</a>
+          <li><a href="metrics.html#module-neuralprophet.metrics">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.plot_forecast
 
         <ul>
-          <li><a href="module_links/plot_forecast.html#module-neuralprophet.plot_forecast">module</a>
+          <li><a href="plot_forecast.html#module-neuralprophet.plot_forecast">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.plot_model_parameters
 
         <ul>
-          <li><a href="module_links/plot_model_parameters.html#module-neuralprophet.plot_model_parameters">module</a>
+          <li><a href="plot_model_parameters.html#module-neuralprophet.plot_model_parameters">module</a>
 </li>
         </ul></li>
     </ul></td>
@@ -580,45 +600,45 @@
     neuralprophet.time_dataset
 
         <ul>
-          <li><a href="module_links/time_dataset.html#module-neuralprophet.time_dataset">module</a>
+          <li><a href="time_dataset.html#module-neuralprophet.time_dataset">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.time_net
 
         <ul>
-          <li><a href="module_links/time_net.html#module-neuralprophet.time_net">module</a>
+          <li><a href="time_net.html#module-neuralprophet.time_net">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.utils
 
         <ul>
-          <li><a href="module_links/utils.html#module-neuralprophet.utils">module</a>
+          <li><a href="utils.html#module-neuralprophet.utils">module</a>
 </li>
         </ul></li>
         <li>
     neuralprophet.utils_torch
 
         <ul>
-          <li><a href="module_links/utils_torch.html#module-neuralprophet.utils_torch">module</a>
+          <li><a href="utils_torch.html#module-neuralprophet.utils_torch">module</a>
 </li>
         </ul></li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.BatchMetric.new">new() (neuralprophet.metrics.BatchMetric method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.BatchMetric.new">new() (neuralprophet.metrics.BatchMetric method)</a>
 
         <ul>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.LossMetric.new">(neuralprophet.metrics.LossMetric method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.LossMetric.new">(neuralprophet.metrics.LossMetric method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MAE.new">(neuralprophet.metrics.MAE method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MAE.new">(neuralprophet.metrics.MAE method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MSE.new">(neuralprophet.metrics.MSE method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MSE.new">(neuralprophet.metrics.MSE method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.RMSE.new">(neuralprophet.metrics.RMSE method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.RMSE.new">(neuralprophet.metrics.RMSE method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.new_param">new_param() (in module neuralprophet.time_net)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.new_param">new_param() (in module neuralprophet.time_net)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.normalize">normalize() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.normalize">normalize() (in module neuralprophet.df_utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -628,65 +648,65 @@
   <h2>P</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.Pakistan">Pakistan (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.Pakistan">Pakistan (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.PH">PH (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.PH">PH (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.Philippines">Philippines (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.Philippines">Philippines (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.PK">PK (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.PK">PK (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/plot_forecast.html#neuralprophet.plot_forecast.plot">plot() (in module neuralprophet.plot_forecast)</a>
+        <li><a href="plot_forecast.html#neuralprophet.plot_forecast.plot">plot() (in module neuralprophet.plot_forecast)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.plot">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.plot">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/plot_forecast.html#neuralprophet.plot_forecast.plot_components">plot_components() (in module neuralprophet.plot_forecast)</a>
+        <li><a href="plot_forecast.html#neuralprophet.plot_forecast.plot_components">plot_components() (in module neuralprophet.plot_forecast)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_components">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_components">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_custom_season">plot_custom_season() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_custom_season">plot_custom_season() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_daily">plot_daily() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_daily">plot_daily() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_forecast.html#neuralprophet.plot_forecast.plot_forecast_component">plot_forecast_component() (in module neuralprophet.plot_forecast)</a>
+        <li><a href="plot_forecast.html#neuralprophet.plot_forecast.plot_forecast_component">plot_forecast_component() (in module neuralprophet.plot_forecast)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_lagged_weights">plot_lagged_weights() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_lagged_weights">plot_lagged_weights() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_last_forecast">plot_last_forecast() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_last_forecast">plot_last_forecast() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/plot_forecast.html#neuralprophet.plot_forecast.plot_multiforecast_component">plot_multiforecast_component() (in module neuralprophet.plot_forecast)</a>
+        <li><a href="plot_forecast.html#neuralprophet.plot_forecast.plot_multiforecast_component">plot_multiforecast_component() (in module neuralprophet.plot_forecast)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_parameters">plot_parameters() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_parameters">plot_parameters() (in module neuralprophet.plot_model_parameters)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_parameters">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.plot_parameters">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_scalar_weights">plot_scalar_weights() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_scalar_weights">plot_scalar_weights() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_trend">plot_trend() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_trend">plot_trend() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_trend_change">plot_trend_change() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_trend_change">plot_trend_change() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_weekly">plot_weekly() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_weekly">plot_weekly() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_yearly">plot_yearly() (in module neuralprophet.plot_model_parameters)</a>
+        <li><a href="plot_model_parameters.html#neuralprophet.plot_model_parameters.plot_yearly">plot_yearly() (in module neuralprophet.plot_model_parameters)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.predict">predict() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.predict">predict() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.predict_seasonal_components">predict_seasonal_components() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.predict_seasonal_components">predict_seasonal_components() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.predict_trend">predict_trend() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.predict_trend">predict_trend() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.print">print() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.print">print() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric.print_stored">print_stored() (neuralprophet.metrics.Metric method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.Metric.print_stored">print_stored() (neuralprophet.metrics.Metric method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -696,31 +716,31 @@
   <h2>R</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.recover_dataframes">recover_dataframes() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.recover_dataframes">recover_dataframes() (in module neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.reg_func_abs">reg_func_abs() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.reg_func_abs">reg_func_abs() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.reg_func_events">reg_func_events() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.reg_func_events">reg_func_events() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.reg_func_regressors">reg_func_regressors() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.reg_func_regressors">reg_func_regressors() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.reg_func_trend">reg_func_trend() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.reg_func_trend">reg_func_trend() (in module neuralprophet.utils)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Regressor">Regressor (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Regressor">Regressor (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.regressors_config_to_model_dims">regressors_config_to_model_dims() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.regressors_config_to_model_dims">regressors_config_to_model_dims() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.AR.regularize">regularize() (neuralprophet.configure.AR method)</a>
+        <li><a href="configure.html#neuralprophet.configure.AR.regularize">regularize() (neuralprophet.configure.AR method)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric.reset">reset() (neuralprophet.metrics.Metric method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.Metric.reset">reset() (neuralprophet.metrics.Metric method)</a>
 
         <ul>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.reset">(neuralprophet.metrics.MetricsCollection method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.reset">(neuralprophet.metrics.MetricsCollection method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.RMSE">RMSE (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.RMSE">RMSE (class in neuralprophet.metrics)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -730,49 +750,49 @@
   <h2>S</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.scalar_features_effects">scalar_features_effects() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.scalar_features_effects">scalar_features_effects() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Season">Season (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Season">Season (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.season_config_to_model_dims">season_config_to_model_dims() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.season_config_to_model_dims">season_config_to_model_dims() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.seasonal_features_from_dates">seasonal_features_from_dates() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.seasonal_features_from_dates">seasonal_features_from_dates() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.seasonality">seasonality() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.seasonality">seasonality() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.set_auto_seasonalities">set_auto_seasonalities() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.set_auto_seasonalities">set_auto_seasonalities() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.set_log_level">set_log_level() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.set_log_level">set_log_level() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.set_random_seed">set_random_seed() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.set_random_seed">set_random_seed() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MAE.set_shift_scale">set_shift_scale() (neuralprophet.metrics.MAE method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MAE.set_shift_scale">set_shift_scale() (neuralprophet.metrics.MAE method)</a>
 
         <ul>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric.set_shift_scale">(neuralprophet.metrics.Metric method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.Metric.set_shift_scale">(neuralprophet.metrics.Metric method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.set_shift_scale">(neuralprophet.metrics.MetricsCollection method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.set_shift_scale">(neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MSE.set_shift_scale">(neuralprophet.metrics.MSE method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MSE.set_shift_scale">(neuralprophet.metrics.MSE method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.RMSE.set_shift_scale">(neuralprophet.metrics.RMSE method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.RMSE.set_shift_scale">(neuralprophet.metrics.RMSE method)</a>
 </li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.set_true_ar_for_eval">set_true_ar_for_eval() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.set_true_ar_for_eval">set_true_ar_for_eval() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.set_y_as_percent">set_y_as_percent() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.set_y_as_percent">set_y_as_percent() (in module neuralprophet.utils)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.ShiftScale">ShiftScale (class in neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.ShiftScale">ShiftScale (class in neuralprophet.df_utils)</a>
 </li>
-        <li><a href="module_links/df_utils.html#neuralprophet.df_utils.split_df">split_df() (in module neuralprophet.df_utils)</a>
+        <li><a href="df_utils.html#neuralprophet.df_utils.split_df">split_df() (in module neuralprophet.df_utils)</a>
 
         <ul>
-          <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
+          <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.split_df">(neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
         </ul></li>
-        <li><a href="module_links/utils.html#neuralprophet.utils.symmetric_total_percentage_error">symmetric_total_percentage_error() (in module neuralprophet.utils)</a>
+        <li><a href="utils.html#neuralprophet.utils.symmetric_total_percentage_error">symmetric_total_percentage_error() (in module neuralprophet.utils)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -782,27 +802,27 @@
   <h2>T</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.tabularize_univariate_datetime">tabularize_univariate_datetime() (in module neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.tabularize_univariate_datetime">tabularize_univariate_datetime() (in module neuralprophet.time_dataset)</a>
 </li>
-        <li><a href="module_links/forecaster.html#neuralprophet.forecaster.NeuralProphet.test">test() (neuralprophet.forecaster.NeuralProphet method)</a>
+        <li><a href="forecaster.html#neuralprophet.forecaster.NeuralProphet.test">test() (neuralprophet.forecaster.NeuralProphet method)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.TH">TH (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.TH">TH (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.Thailand">Thailand (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.Thailand">Thailand (class in neuralprophet.hdays)</a>
 </li>
-        <li><a href="module_links/time_dataset.html#neuralprophet.time_dataset.TimeDataset">TimeDataset (class in neuralprophet.time_dataset)</a>
+        <li><a href="time_dataset.html#neuralprophet.time_dataset.TimeDataset">TimeDataset (class in neuralprophet.time_dataset)</a>
 </li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet">TimeNet (class in neuralprophet.time_net)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet">TimeNet (class in neuralprophet.time_net)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Train">Train (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Train">Train (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/configure.html#neuralprophet.configure.Trend">Trend (class in neuralprophet.configure)</a>
+        <li><a href="configure.html#neuralprophet.configure.Trend">Trend (class in neuralprophet.configure)</a>
 </li>
-        <li><a href="module_links/time_net.html#neuralprophet.time_net.TimeNet.trend">trend() (neuralprophet.time_net.TimeNet method)</a>
+        <li><a href="time_net.html#neuralprophet.time_net.TimeNet.trend">trend() (neuralprophet.time_net.TimeNet method)</a>
 </li>
-        <li><a href="module_links/hdays.html#neuralprophet.hdays.TU">TU (class in neuralprophet.hdays)</a>
+        <li><a href="hdays.html#neuralprophet.hdays.TU">TU (class in neuralprophet.hdays)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -812,21 +832,21 @@
   <h2>U</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.BatchMetric.update">update() (neuralprophet.metrics.BatchMetric method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.BatchMetric.update">update() (neuralprophet.metrics.BatchMetric method)</a>
 
         <ul>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.Metric.update">(neuralprophet.metrics.Metric method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.Metric.update">(neuralprophet.metrics.Metric method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.update">(neuralprophet.metrics.MetricsCollection method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.update">(neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-          <li><a href="module_links/metrics.html#neuralprophet.metrics.ValueMetric.update">(neuralprophet.metrics.ValueMetric method)</a>
+          <li><a href="metrics.html#neuralprophet.metrics.ValueMetric.update">(neuralprophet.metrics.ValueMetric method)</a>
 </li>
         </ul></li>
     </ul></td>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.update_batch">update_batch() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.update_batch">update_batch() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.MetricsCollection.update_values">update_values() (neuralprophet.metrics.MetricsCollection method)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.MetricsCollection.update_values">update_values() (neuralprophet.metrics.MetricsCollection method)</a>
 </li>
     </ul></td>
   </tr></table>
@@ -836,7 +856,7 @@
   <h2>V</h2>
   <table style="width: 100%" class="indextable genindextable"><tr>
     <td style="width: 33%; vertical-align: top;"><ul>
-        <li><a href="module_links/metrics.html#neuralprophet.metrics.ValueMetric">ValueMetric (class in neuralprophet.metrics)</a>
+        <li><a href="metrics.html#neuralprophet.metrics.ValueMetric">ValueMetric (class in neuralprophet.metrics)</a>
 </li>
     </ul></td>
   </tr></table>
