@@ -5004,6 +5004,13 @@
   .upperleftlogo{
     width: 23%; }
   
+  .logo-container{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+  
   .svg-icon {
     display: -ms-inline-flexbox;
     display: inline-flex;
