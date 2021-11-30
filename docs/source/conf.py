@@ -71,10 +71,9 @@ html_logo = "images/np_highres_docs.svg"
 # html_logo = "images/logo.png"
 html_theme_options: Dict[str, Any] = {
     "announcement": """
-        <a style=\"text-decoration: none; color: white;\" 
-           href=\"https://github.com/ourownstory/neural_prophet/blob/master/notes/NeuralProphet_Facebook_AI_Summit.pdf\" target=\"_blank\">
-           Checkout NeuralProphet @ Facebook AI Summit
-           <img src=\"./_static/rocket.png\" width=\"16\" height=\"16\">
+        <a style=\"text-decoration: none; color: white; font-size: 0,8em\" 
+           href=\"https://github.com/ourownstory/neural_prophet/blob/master/notes/NeuralProphet_Facebook_Forecasting_Summit.pdf\" target=\"_blank\">
+           View NeuralProphet @ Facebook Forecasting Summit <span>&#128640;</span>
         </a>
     """,
     "sidebar_hide_name": True,
