@@ -67,7 +67,7 @@ exclude_patterns = []
 #
 html_theme = "furo"
 html_favicon = "images/np_favicon.png"
-html_logo = "images/np_highres.svg"
+html_logo = "images/np_highres_docs.svg"
 # html_logo = "images/logo.png"
 html_theme_options: Dict[str, Any] = {
     "announcement": """
