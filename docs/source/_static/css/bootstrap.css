@@ -5007,15 +5007,13 @@
   .heading-brand {
     font-weight: 800;
     font-size: 1.75rem; }
-
-  .upperleftlogo{
-    width: 23%; }
   
   .logo-container{
     max-width: 100%;
     width: auto;
     height: auto;
     display: block;
+    padding-left: 0;
   }
 
   .logo {
