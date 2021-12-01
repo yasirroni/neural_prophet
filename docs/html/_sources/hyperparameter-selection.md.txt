@@ -8,15 +8,15 @@ are as follows.
 |:----------|:--------------------|
 | `growth`   | linear |
 | `changepoints`   | None |
-| `n_changepoints`   | 5 |
-| `changepoints_range`   | 0.8 |
+| `n_changepoints`   | 10 |
+| `changepoints_range`   | 0.9 |
 | `trend_reg`   | 0 |
 | `trend_reg_threshold`   | False |
 | `yearly_seasonality`   | auto |
 | `weekly_seasonality`   | auto |
 | `daily_seasonality`   | auto |
 | `seasonality_mode`   | additive |
-| `seasonality_reg`   | None |
+| `seasonality_reg`   | 0 |
 | `n_forecasts`   | 1 |
 | `n_lags`   | 0 |
 | `num_hidden_layers`   | 0 |
@@ -26,9 +26,11 @@ are as follows.
 | `epochs`   | None |
 | `batch_size`   | None |
 | `loss_func`   | Huber |
+| `optimizer`   | AdamW |
 | `train_speed`   | None |
-| `normalize_y`   | auto |
+| `normalize`   | auto |
 | `impute_missing`   | True |
+| `collect_metrics`   | True |
 
 <br />
 
@@ -47,9 +49,9 @@ on either domain expertise or an empirical analysis.
 ## Model Training Related Parameters
 NeuralProphet is fit with stochastic gradient descent - more precisely, with an AdamW optimizer and a One-Cycle policy. 
 If the parameter `learning_rate` is not specified, a learning rate range test is conducted to determine the optimal learning rate. 
-The `epochs` and the `loss_func` are two other parameters that directly affect the model training process. 
-If not defined, both are automatically set based on the dataset size. 
-They are set in a manner that controls the total number training steps to be around 1000 to 4000.
+The `epochs`, `loss_func` and `optimizer` are other parameters that directly affect the model training process. 
+If not defined, `epochs`and `loss_func` are automatically set based on the dataset size. They are set in a manner that controls the total number training steps to be around 1000 to 4000.
+NeuralProphet offers to set two different values for `optimizer`, namely `AdamW` and `SDG` (stochastic gradient decsent).
 
 If it looks like the model is overfitting to the training data (the live loss plot can be useful hereby), 
 you can reduce `epochs`  and `learning_rate`, and potentially increase the `batch_size`. 
@@ -82,6 +84,7 @@ imilar to Prophet, NeuralProphet too can work with missing values when it is in 
 However, when the autocorrelation needs to be captured, it is necessary for the missing values to be imputed, since then the modelling becomes an ordered problem. 
 Letting this parameter at its default can get the job done perfectly in most cases.
 
+`collect_metrics` is used to select the names of metrics to compute. It's set to `True` and computes `mae` and `rmse` by default.
 
 
 ## Trend Related Parameters

@@ -1,5 +1,3 @@
-The documentation is a work in progress.
-
 # Overview of the NeuralProphet Model
 
 NeuralProphet is a Neural Network based PyTorch implementation of a user-friendly time series forecasting tool for practitioners.

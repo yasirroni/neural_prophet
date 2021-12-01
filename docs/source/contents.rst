@@ -117,6 +117,5 @@ Get started with Tutorials
    plot_model_parameters.py <plot_model_parameters>
    time_dataset.py <time_dataset>
    time_net.py <time_net>
-   utils_torch.py <utils_torch>
    utils.py <utils>
 

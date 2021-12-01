@@ -267,10 +267,10 @@ are as follows.</p>
 <td class="text-align:left"><p>None</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">n_changepoints</span></code></p></td>
-<td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>10</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">changepoints_range</span></code></p></td>
-<td class="text-align:left"><p>0.8</p></td>
+<td class="text-align:left"><p>0.9</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">trend_reg</span></code></p></td>
 <td class="text-align:left"><p>0</p></td>
@@ -291,7 +291,7 @@ are as follows.</p>
 <td class="text-align:left"><p>additive</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">seasonality_reg</span></code></p></td>
-<td class="text-align:left"><p>None</p></td>
+<td class="text-align:left"><p>0</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">n_forecasts</span></code></p></td>
 <td class="text-align:left"><p>1</p></td>
@@ -320,13 +320,19 @@ are as follows.</p>
 <tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">loss_func</span></code></p></td>
 <td class="text-align:left"><p>Huber</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">train_speed</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">optimizer</span></code></p></td>
+<td class="text-align:left"><p>AdamW</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">train_speed</span></code></p></td>
 <td class="text-align:left"><p>None</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">normalize_y</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">normalize</span></code></p></td>
 <td class="text-align:left"><p>auto</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">impute_missing</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">impute_missing</span></code></p></td>
+<td class="text-align:left"><p>True</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">collect_metrics</span></code></p></td>
 <td class="text-align:left"><p>True</p></td>
 </tr>
 </tbody>
@@ -350,9 +356,9 @@ on either domain expertise or an empirical analysis.</p>
 <h2>Model Training Related Parameters<a class="headerlink" href="#model-training-related-parameters" title="Permalink to this headline">¶</a></h2>
 <p>NeuralProphet is fit with stochastic gradient descent - more precisely, with an AdamW optimizer and a One-Cycle policy.
 If the parameter <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> is not specified, a learning rate range test is conducted to determine the optimal learning rate.
-The <code class="docutils literal notranslate"><span class="pre">epochs</span></code> and the <code class="docutils literal notranslate"><span class="pre">loss_func</span></code> are two other parameters that directly affect the model training process.
-If not defined, both are automatically set based on the dataset size.
-They are set in a manner that controls the total number training steps to be around 1000 to 4000.</p>
+The <code class="docutils literal notranslate"><span class="pre">epochs</span></code>, <code class="docutils literal notranslate"><span class="pre">loss_func</span></code> and <code class="docutils literal notranslate"><span class="pre">optimizer</span></code> are other parameters that directly affect the model training process.
+If not defined, <code class="docutils literal notranslate"><span class="pre">epochs</span></code>and <code class="docutils literal notranslate"><span class="pre">loss_func</span></code> are automatically set based on the dataset size. They are set in a manner that controls the total number training steps to be around 1000 to 4000.
+NeuralProphet offers to set two different values for <code class="docutils literal notranslate"><span class="pre">optimizer</span></code>, namely <code class="docutils literal notranslate"><span class="pre">AdamW</span></code> and <code class="docutils literal notranslate"><span class="pre">SDG</span></code> (stochastic gradient decsent).</p>
 <p>If it looks like the model is overfitting to the training data (the live loss plot can be useful hereby),
 you can reduce <code class="docutils literal notranslate"><span class="pre">epochs</span></code>  and <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>, and potentially increase the <code class="docutils literal notranslate"><span class="pre">batch_size</span></code>.
 If it is underfitting, the number of <code class="docutils literal notranslate"><span class="pre">epochs</span></code> and <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> can be increased and the <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> potentially decreased.</p>
@@ -381,6 +387,7 @@ not such scaling, users can turn this off or select another normalization.</p>
 imilar to Prophet, NeuralProphet too can work with missing values when it is in the regression mode without the AR-Net.
 However, when the autocorrelation needs to be captured, it is necessary for the missing values to be imputed, since then the modelling becomes an ordered problem.
 Letting this parameter at its default can get the job done perfectly in most cases.</p>
+<p><code class="docutils literal notranslate"><span class="pre">collect_metrics</span></code> is used to select the names of metrics to compute. It’s set to <code class="docutils literal notranslate"><span class="pre">True</span></code> and computes <code class="docutils literal notranslate"><span class="pre">mae</span></code> and <code class="docutils literal notranslate"><span class="pre">rmse</span></code> by default.</p>
 </section>
 <section id="trend-related-parameters">
 <h2>Trend Related Parameters<a class="headerlink" href="#trend-related-parameters" title="Permalink to this headline">¶</a></h2>
